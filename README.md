@@ -5,9 +5,8 @@ doing an analysis for the dataset about bristlon
 import pandas as pd
 data = pd.read_csv('calendar.csv')
 ```
-
+# We need to know the number of available and unanvailable rooms
 ## T stands for available, F stand for not available
-
 ``` diff
 data.available.value_counts()
 ```
