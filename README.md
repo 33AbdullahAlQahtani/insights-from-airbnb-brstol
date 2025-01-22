@@ -35,3 +35,16 @@ print("Busiest Dates are:")
 print(busiest_dates.head())
 ```
 ![image](https://github.com/user-attachments/assets/a3e5147d-12f0-49b4-94ad-4d137009865c)
+
+# 4 Plot a bar graph to show availability percentage
+
+``` diff
+import matplotlib.pyplot as plt
+availability_percentage.plot(kind = 'bar', color = ['green', 'red'])
+plt.title('Availabilitiy Percentages')
+plt.ylabel('Percentage')
+plt.xlabel('Available (t/f)')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/c337aece-9fb4-4b4f-8f29-a53b2bd48437)
+
