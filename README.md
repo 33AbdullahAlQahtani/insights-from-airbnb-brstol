@@ -126,8 +126,51 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/c7995e95-a25e-4701-aa57-6c7cb05b7843)
 
-# 11 Mapping our Airbnb listings about location density on a real map
+# :pushpin: 11 Mapping our Airbnb listings about location density on a real map
 We are going to map our airbnb listings based on their density for their given location
-``` diff
+first and foremost, we need to locate our altitude and longtitude for our dataset, as for my listing datasit, its bristol. So the latitude and longtitude is 51.45521684474903, -2.584550840992403
+## :pencil2: 11.5.1 Here is how:
+```markdown
+1. Write your city name
+2. Right click on it
 ```
+it will show you the following list:
+![image](https://github.com/user-attachments/assets/9ea78144-6e18-4f1c-ae79-a4e73733b7b9)
+Afterwards, copy the first option which is the latitude and the longtitude
+
+## 11.5.2 Writing Our Code
+now we write the following code to display our heatmap for airbnb density:
+
+``` diff
+import folium
+from folium.plugins import HeatMap
+import pandas as pd
+
+
+bristol_data = listings[['latitude', 'longitude', 'price']]  # Example, you may add more columns
+
+# Create a base map centered around bristol
+m = folium.Map(location=[51.45521684474903, -2.584550840992403], zoom_start=10)
+
+# Prepare the data for the heatmap
+heat_data = [[row['latitude'], row['longitude']] for index, row in bristol_data.iterrows()]
+
+# Add the heatmap to the map
+HeatMap(heat_data).add_to(m)
+
+# Save the map as an HTML file to view in a browser
+m.save('bristol_Data.html')
+
+# If you're using Jupyter Notebook, you can display the map directly in the notebook:
+m
+```
+
+![image](https://github.com/user-attachments/assets/76244098-944c-4d05-bcd9-b7a622e63964)
+
+## Without Terrain:
+
+![image](https://github.com/user-attachments/assets/eafc6a95-249d-4b59-a353-575c9a9def3b)
+
+
+
 
