@@ -38,6 +38,7 @@ print(busiest_dates.head())
 
 # 4 Plot a bar graph to show availability percentage
 
+We are polotting a barplot to indicate if there is airbnb availablitiy or not in Bristol
 ``` diff
 import matplotlib.pyplot as plt
 availability_percentage.plot(kind = 'bar', color = ['green', 'red'])
@@ -50,6 +51,7 @@ plt.show()
 
 # 5 Plotting the busiest day
 
+As the given code below, its going to plot the most busiest days for airbnb rooms in Bristol
 ``` diff
 busiest_dates.head(10).plot(kind='bar', color='orange')
 plt.title('Top 10 Busiest Dates for Airbnb Bristol')
@@ -61,6 +63,7 @@ plt.show()
 
 
 # 6 Download and read listings for Bristol dataset Airbnb's 
+
 We are going to get listings to help us visualize about airbnb locations. Retreirved from: https://data.insideairbnb.com/united-kingdom/england/bristol/2024-09-23/visualisations/listings.csv
 ``` diff
 import pandas as pd
@@ -69,6 +72,7 @@ listings = pd.read_csv('listings.csv')
 ![image](https://github.com/user-attachments/assets/00e32f10-e878-4430-8966-d5cd7b2ac23f)
 
 # 7 Listing the columns
+
 We are going to see our dataset columns
 ``` diff
 listings.columns
@@ -76,6 +80,7 @@ listings.columns
 ![image](https://github.com/user-attachments/assets/4e8365d9-f901-400c-9e2a-112c13aed1e9)
 
 # 8 Room prices based on their type
+
 Lets combine both columns, room type and prices
 
 ``` diff
@@ -93,6 +98,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/9010168e-cad2-4790-b655-ca8fbdc1a4e6)
 
 # :bookmark: 9 Top 10 Neighbourhoods with the most listings
+
 We are going to plot a bar plot that conclude the neighbourhoods with the most listings
 
 ``` diff
@@ -111,6 +117,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/2b0db1ba-2769-4c2d-ba22-5ac6bcf85e72)
 
 # :art: 10 Geographical Distribution of Listings By Price
+
 We are going to geographically show the distribution of airbnbs in bristol and coloring is based on price.
 
 ```diff
@@ -127,19 +134,22 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/c7995e95-a25e-4701-aa57-6c7cb05b7843)
 
 # :pushpin: 11 Mapping our Airbnb listings about location density on a real map
-We are going to map our airbnb listings based on their density for their given location
-first and foremost, we need to locate our altitude and longtitude for our dataset, as for my listing datasit, its bristol. So the latitude and longtitude is 51.45521684474903, -2.584550840992403
+
+We are going to map our airbnb listings based on their density for their given location.
+First and foremost, we need to locate our altitude and longtitude for our dataset, as for my listing datasit, its bristol. So the latitude and longtitude is 51.45521684474903, -2.584550840992403
+
 ## :pencil2: 11.5.1 Here is how:
 ```markdown
 1. Write your city name
 2. Right click on it
 ```
-it will show you the following list:
+It will show you the following list:
 ![image](https://github.com/user-attachments/assets/9ea78144-6e18-4f1c-ae79-a4e73733b7b9)
 Afterwards, copy the first option which is the latitude and the longtitude
 
 ## 11.5.2 Writing Our Code
-now we write the following code to display our heatmap for airbnb density:
+
+Now we write the following code to display our heatmap for airbnb density:
 
 ``` diff
 import folium
