@@ -110,8 +110,24 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/2b0db1ba-2769-4c2d-ba22-5ac6bcf85e72)
 
+# :art: 10 Geographical Distribution of Listings By Price
+We are going to geographically show the distribution of airbnbs in bristol and coloring is based on price.
 
+```diff
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=listings, x='longitude', y='latitude', hue='price', palette='viridis', size='price', sizes=(10, 200))
+plt.title('Geographical Distribution of Listings in Bristol (Price Colored)')
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/c7995e95-a25e-4701-aa57-6c7cb05b7843)
 
-
+# 11 Mapping our Airbnb listings about location density on a real map
+We are going to map our airbnb listings based on their density for their given location
+``` diff
+```
 
