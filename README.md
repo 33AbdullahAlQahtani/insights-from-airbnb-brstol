@@ -116,7 +116,43 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/2b0db1ba-2769-4c2d-ba22-5ac6bcf85e72)
 
-# :art: 10 Geographical Distribution of Listings By Price
+# :building_construction: 10 Pie-Chart Average of Reviews Based on Room-Type
+
+We are drawing a pie chart about the average reviews based on room-type
+
+``` diff
+# Calculate the average number of reviews by room type
+price_by_room = listings.groupby('room_type')['number_of_reviews'].mean()
+print(price_by_room)
+
+# Plot the average number of reviews by room type as a pie chart
+price_by_room.plot(kind='pie', autopct='%1.1f%%', startangle=90)
+plt.title('Average Number of Reviews by Room Type')
+plt.ylabel('')  # Remove the default ylabel for a cleaner pie chart
+plt.xlabel('')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/8ae44f51-c520-48da-bf23-530ce9c38362)
+
+# :bricks: 11 Barplot About The Top 10 Cheapest Airbnb Neighbourhoods in Bristol
+
+This following bar plot will arrange the 10 cheapest airbnb neighbourhoods in bristol
+
+``` diff
+# Calculate the average number of reviews by room type
+price_by_room = listings.groupby('neighbourhood')['price'].min().head(10)
+print(price_by_room)
+
+# Plot the average number of reviews by room type as a pie chart
+price_by_room.plot(kind='bar', color = 'blue')
+plt.title('Cheapest neighbourhoods by price')
+plt.ylabel('')  # Remove the default ylabel for a cleaner pie chart
+plt.xlabel('')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/f2a7c87c-b148-4053-a5fb-e14675880b99)
+
+# :art: 12 Geographical Distribution of Listings By Price
 
 We are going to geographically show the distribution of airbnbs in bristol and coloring is based on price.
 
@@ -133,12 +169,12 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/c7995e95-a25e-4701-aa57-6c7cb05b7843)
 
-# :pushpin: 11 Mapping our Airbnb listings about location density on a real map
+# :pushpin: 13 Mapping our Airbnb listings about location density on a real map
 
 We are going to map our airbnb listings based on their density for their given location.
 First and foremost, we need to locate our altitude and longtitude for our dataset, as for my listing datasit, its bristol. So the latitude and longtitude is 51.45521684474903, -2.584550840992403
 
-## :pencil2: 11.5.1 Here is how:
+## :pencil2: 13.5.1 Here is how:
 ```markdown
 1. Write your city name
 2. Right click on it
@@ -147,7 +183,7 @@ It will show you the following list:
 ![image](https://github.com/user-attachments/assets/9ea78144-6e18-4f1c-ae79-a4e73733b7b9)
 Afterwards, copy the first option which is the latitude and the longtitude
 
-## 11.5.2 Writing Our Code
+## 13.5.2 Writing Our Code
 
 Now we write the following code to display our heatmap for airbnb density:
 
